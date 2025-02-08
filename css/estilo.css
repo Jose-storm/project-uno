@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Rubik&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Bebas+Neue&family=Jersey+15&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik&family=Salsa&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+15&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Major+Mono+Display&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik&family=Salsa&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -8,7 +9,10 @@
     scroll-behavior: smooth;
 }
 body{
-    background-color: #000;
+    background-color: #F2F2F2;
+}
+:root{
+    --Tipografia_section: Inter;
 }
 /* Contenedor momentaneo-algunas mejoras*/
 .momento{
@@ -18,7 +22,7 @@ body{
     padding: 5px 20px;
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     font-size: 14px;
     justify-content: space-between;
 }
@@ -40,17 +44,18 @@ body{
     /* Repasar las propiedades position y z-index */
     /* position: static;
     z-index: 1; */
-    background-color: white;
+    background-color: #F2F2F2;
     display: flex;
     flex-direction: row;
     flex-wrap: no-wrap;
     justify-content: space-between;
-    width: 100%;
     border-bottom-style: solid;
     border-width: 1px;
     border-color: rgb(211, 207, 207);
     position: sticky;
     top: 0;
+    width: 100%;
+    z-index: 4;
     /* No usaremos margin ya que no queremos que se separe de llos demás elementos
     ni que tenga un espacio al exterior */
     /* margin: 0px 10px; */
@@ -104,6 +109,11 @@ body{
     border-width: 1px;
     border-radius: 50px;
     font-size: 14px;
+    /* @media only screen and (max-width: 590px){
+        background-color: aqua;
+        border: none;
+        background-image: url(../im);
+    } */
 }
 .encabezado li{
     display: inline-block;
@@ -125,33 +135,75 @@ body{
 }
 /* secciones del documento */
 .contenido_uno{
-    background-image: url(../img/detective-1424831_640.png);
+    /* background-image: url(../img/detective-1424831_640.png); */
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center right;
     font-family: "Poppins", sans-serif;
-    height: 500px;
-    padding: 0px 20px;
+    min-height: 100vh;
+    padding: 20px 20px;
     overflow: hidden;
-    background-color: #000;
+    gap: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    /* background-color: #958976; */
+    /* Css Nesting (Anidación) para la imagen */
+    .descripcion{
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        /* align-items: center; */
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+        & a{
+            text-decoration: underline 2px;
+            color: #1D2326;
+            border-radius: 30px;
+        }
+    }
+    .descripcion__img{
+        /* background-color: #D0D9D7;
+        background-image: url(../img/watchmaker-8697958_1280.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 50vh;
+        width: 100%;
+        border-radius: 2px; */
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 350px);
+
+        .descripcion__two{
+            /* background-image: url(../img/watchmaker-8735031_1280.jpg); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 20px;
+        }
+    }
 }
-.contenido_uno img{
-    height: 350px;
-    width: auto;
+.descripcion--one{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background-image: url(../img/watchmaker-8735031_1280.jpg);
 }
-.title_section{
+.descripcion--two{
+    grid-row: 2/3;
+    grid-column: 2/3;
+    background-image: url(../img/watchmaker-8697958_1280.jpg);
+}
+.descripcion__title{
     font-size: 3em;
     font-family: "Poppins",sans-serif;
-    color: #F06060;
-    width: 100%;
+    color: #1D2326;
 }
 .contenido_uno p{
-    text-align: justify;
-    line-height: 30px;
     /* Por el momento el porcentaje, investigar más sobre ello (%)*/
-    width: 50%;
     font-size: 15px;
-    color: white;
+    color: #3F4159;
 }
 .contenido_dos{
     padding: 20px;
@@ -259,56 +311,95 @@ a los flex-items y container-flex. */
 }
 /* Page de productos ----------------------------------*/
 .content_llamativo{
-    background-image: url(../img/jewellery-1203951_1280.jpg);
-    height: 109vh;
-    background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover;
-    color: #D8EBF2;
+    /* background-image: url(../img/jewellery-1203951_1280.jpg); */
+    min-height: 800px;
+    color: #fff;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-flow: column nowrap;
     text-align: center;
-    justify-content: center;
-    font-family: "Poppins", sans-serif;
+    justify-content: space-around;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    background-color: #1D2326;
+    margin: 15px 20px;
+    padding: 20px;
+    border-radius: 5px;
+    /* width: 100%; */
+    gap: 20px;
+
+    & h1{
+        font-size: 50px;
+    }
+    .llamativo__img{
+        /* background-image: url(../img/hygiene-870763_1280.jpg); */
+        background-color: #D0D9D7;
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
 }
-.content_llamativo h1{
-    font-size: 3em;
+.llamativo{
+    display: flex;
+    flex-flow: row nowrap;
+    width: 70%;
+    height: 500px;
+    /* Css Nesting */
+    .one{
+        background-image: url(../img/jewellery-1203951_1280.jpg);
+    }
+    .two{
+        background-image: url(../img/ruby-2426451_640.jpg);
+    }
+    .tree{
+        background-image: url(../img/ring-jewelry-2834320_1280.jpg);
+    }
+    .four{
+        background-image: url(../img/glass-and-wood-ring-2636613_1280.jpg);
+    }
 }
-.content_llamativo .enlace{
-    padding: 10px;
+.llamativo__descripcion{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
 }
 .content_llamativo a{
-    background-color: #F06060;
-    padding: 10px 25px;
     border-radius: 20px;
-    text-decoration: none;
-    color: white;
+    text-decoration: underline 2px;
     transition: 0.9s;
+    width: 10%;
+    color: white;
 }
 .content_llamativo a:hover{
-    background-color: transparent;
-    border-radius: 20px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: white;
     transition: 0.9s;
 }
 /* Aplicación de grid sección de tipos de servicios */
+/* Css Nesting */
 .tipo_servicio{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 90vh);
+    grid-template-rows: repeat(2, 600px);
     /* padding: 0px 20px; */
     gap: 4px 4px;
+    height: auto;
+    .servicio{
+        background-color: #F06060;
+        /* border: 2px solid #D8EBF2; */
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 20px 20px;
+        width: 100%;
+    }
 }
-.tipo_servicio .servicio{
-    background-color: #F06060;
-    /* border: 2px solid #D8EBF2; */
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 20px 20px;
+@media only screen and (max-width: 465px){
+    .tipo_servicio{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 500px);
+    }
 }
 .servicio h2{
     font-family: "Sora", sans-serif;
@@ -317,69 +408,18 @@ a los flex-items y container-flex. */
 }
 .img1{
     background-image: url(../img/hygiene-870763_1280.jpg);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: end;
-    align-items: end;
-    font-family: "Poppins", sans-serif;
-}
-.img1 a{
-    font-size: 16px;
-    background-color: #F06060;
-    padding: 10px 30px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
 }
 .img2{
     background-image: url(../img/glass-and-wood-ring-2636613_1280.jpg);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: end;
-    align-items: end;
-    font-family: "Poppins", sans-serif;
-}
-.img2 a{
-    font-size: 16px;
-    background-color: #F06060;
-    padding: 10px 30px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
 }
 .img3{
     background-image: url(../img/wedding-ring-2666265_1280.jpg);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: end;
-    align-items: end;
-    color: #0D0D0D;
-    font-family: "Poppins", sans-serif;
-}
-.img3 a{
-    font-size: 16px;
-    background-color: #F06060;
-    padding: 10px 30px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
 }
 .img4{
     background-image: url(../img/ruby-2426451_640.jpg);
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: end;
-    align-items: end;
-    color: #383416;
-    font-family: "Poppins", sians-serif;
 }
 .img4 a{
     font-size: 16px;
-    background-color: #F06060;
-    padding: 10px 30px;
-    border-radius: 20px;
-    text-decoration: none;
-    color: white;
 }
 /* REFACTORIZAR CÓDIGO (LÍNEAS REPETITIVAS INNECESARIAS) */
 /* .mensaje_uno{
@@ -389,4 +429,107 @@ a los flex-items y container-flex. */
 .contenido_puno{
     background-color: #D8EBF2;
     height: 400px;
+}
+@media only screen and (max-width: 450px){
+    .contenido_uno{
+        flex-wrap: wrap;
+        .descripcion a{
+            width: 50%;
+        }
+    }
+    .content_llamativo{
+        margin: 0;
+        border-radius: 0px;
+        & a{
+            width: 50%;
+        }
+    }
+    .contenido_video{
+        min-height: 50px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 880px){
+    .descripcion__img{
+        gap: 10px;
+    }
+    .descripcion--one{
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+    .descripcion--two{
+        grid-row: 2/2;
+        grid-column: 1/3;
+    }
+}
+.contenido_video{
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    & video{
+        border-radius: 3px;
+        width: 100%;
+        height: auto;
+    }
+}
+/* Section products featured */
+.producto_destacado{
+    min-height: 95vh;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--Tipografia_section);
+    /* Css Nesting Native */
+    .producto{
+        /* OJO */
+        height: 70vh;
+        background-color: white;
+        width: 24vw;
+        border-radius: 3px;
+    }
+    .producto__descripcion{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 10px;
+    }
+    .producto__img{
+        background-color: #D8EBF2;
+        background-image: url(../img/ring-jewelry-2834320_1280.jpg);
+        height: 250px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .producto__img--two{
+        background-image: url(../img/glass-and-wood-ring-2636613_1280.jpg);
+    }
+    .producto__img--tree{
+        background-image: url(../img/ruby-2426451_640.jpg);
+    }
+    .producto__img--four{
+        background-image: url(../img/wedding-ring-2666265_1280.jpg);
+    }
+    .producto__valoracion{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.descripcion__title{
+    text-align: center;
+}
+@media only screen and (max-width: 607px){
+    .producto_destacado{
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+    }
 }
