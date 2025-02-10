@@ -1,0 +1,577 @@
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Bebas+Neue&family=Jersey+15&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Major+Mono+Display&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik&family=Salsa&family=Sora:wght@100..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agu+Display&family=Bebas+Neue&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Jersey+15&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Major+Mono+Display&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Rubik&family=Salsa&family=Sora:wght@100..800&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+/* Variables globales */
+$resolucion-main-ancho: 100%;
+$bgcolor-main-uno: #223240; 
+$separacion-main-display: 10px;
+$color-word-dos: #9AEBA3;
+$color-word-uno: white;
+$family-main-uno: "Poppins";
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #F2F2F2;
+}
+:root{
+    --Tipografia_section: Inter;
+}
+/* Contenedor momentaneo-algunas mejoras*/
+.momento{
+    font-family: "Poppins", sans-serif;
+    text-align: center;
+    background-color: $bgcolor-main-uno;
+    padding: 5px 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-size: 14px;
+    justify-content: space-between;
+}
+.momento p{
+    color: white;
+}
+.momento a{
+    text-decoration: underline;
+    color: white;
+}
+/* Opción para el header sea el contenedor principal de nuestro menú (barra
+ de navegación y el logo estableciendo un relleno para todos) */
+.encabezado{
+    background-size: cover;
+    padding: 13px 20px;
+    background-color: #F2F2F2;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    border-width: 1px;
+    border-color: rgb(211, 207, 207);
+    position: sticky;
+    top: 0;
+    width: $resolucion-main-ancho;
+    z-index: 1;
+    /* No usaremos margin ya que no queremos que se separe de llos demás elementos
+    ni que tenga un espacio al exterior */
+    /* margin: 0px 10px; */
+}
+/* Usuario */
+.user_register{
+    padding: 10px 0px;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    & a{
+        text-decoration: none;
+        font-size: 14px;
+        color: #000;
+    }
+}
+.logo{
+    /* background-image: url(../img/Clean_Elegant_Typography_Brand_Logo-removebg-preview.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center; */
+    /* background-color: #5C4B51; */
+    height: 70px;
+}
+.logo img{
+    height: 90px;
+    width: 90px;
+}
+.logo h3{
+    font-size: 3em;
+    text-align: left;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
+.logo span{
+    color: #402403;
+}
+.encabezado ul{
+    list-style-type: none;
+    padding: 12px;
+    border-color: rgb(210, 208, 208);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 50px;
+    font-size: 14px;
+    /* @media only screen and (max-width: 590px){
+        background-color: aqua;
+        border: none;
+        background-image: url(../im);
+    } */
+    // & :nth-child(5){
+    //     background-color: $color-word-dos;
+    //     color: $color-word-dos;
+    //     border-radius: 50px;
+    // }
+    .enlace_especifico{
+        background-color: $color-word-dos;
+        color: $bgcolor-main-uno;
+    }
+}
+.encabezado li{
+    display: inline-block;
+    margin: 0px 1px;
+}
+.encabezado li a{
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: "Poppins", sans-serif;
+    color: #000;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: 0.8s;
+}
+.encabezado li a:hover{
+    background-color: $bgcolor-main-uno;
+    color: $color-word-dos;
+    border-radius: 20px;
+    transition: 0.7s ease;
+}
+/* secciones del documento */
+.contenido_uno{
+    /* background-image: url(../img/detective-1424831_640.png); */
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center right;
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    padding: 20px 20px;
+    overflow: hidden;
+    gap: 10px;
+    display: flex;
+    flex-flow: row nowrap;
+    /* background-color: #958976; */
+    /* Css Nesting (Anidación) para la imagen */
+    .descripcion{
+        width: 100%;
+        display: flex;
+        flex-flow: column nowrap;
+        /* align-items: center; */
+        justify-content: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    & a{
+        color: $color-word-dos;
+        border-radius: 30px;
+        text-decoration: none;
+        background-color: $bgcolor-main-uno;
+        width: 30%;
+        text-align: center;
+        padding: 10px 0px;
+        transition: .9s ease;
+        border: 1px solid $bgcolor-main-uno;
+    }
+    & a:hover{
+        transition: .9s ease;
+        background-color: transparent;
+        color: $bgcolor-main-uno;
+        border: 1px solid $bgcolor-main-uno;
+    }
+    .descripcion__img{
+        /* background-color: #D0D9D7;
+        background-image: url(../img/watchmaker-8697958_1280.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 50vh;
+        width: 100%;
+        border-radius: 2px; */
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 350px);
+        gap: 5px;
+
+        .descripcion__two{
+            /* background-image: url(../img/watchmaker-8735031_1280.jpg); */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 3px;
+        }
+    }
+}
+.descripcion--one{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    background-image: url(../img/watchmaker-8735031_1280.jpg);
+}
+.descripcion--two{
+    grid-row: 1/2;
+    grid-column: 2/3;
+    background-image: url(../img/watchmaker-8697958_1280.jpg);
+}
+.descripcion__two--tree{
+    background-image: url(../img/home-office-1575464_1280.jpg);
+    grid-column: 1/3;
+    grid-row: 2/3;
+}
+.descripcion__title{
+    font-size: 3em;
+    font-family: "Poppins",sans-serif;
+    color: #1D2326;
+}
+.contenido_uno p{
+    /* Por el momento el porcentaje, investigar más sobre ello (%)*/
+    font-size: 15px;
+    color: #3F4159;
+}
+.contenido_dos{
+    padding: 20px;
+    background-color: #FBF2ED;
+    /* herencia desde el elemento padre */
+    font-family: "Poppins", sans-serif;
+    border-radius: 50px;
+    height: 100vh;
+    background-color: #D8EBF2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+/* Aqui se usa la definición de padre e hijo para un elemento con 
+clases iguales para diferenciarlo a los demás (1 forma) */
+.contenido_dos .title_section{
+    text-align: center;
+}
+/* Si existe más de una lista desordenadas ul, podemos aplicar una clase
+para todas. (Ejemplo para la viñetas de todas) */
+.contenido_dos ul{
+    list-style-type: none;
+    text-align: center;
+}
+.contenido_dos li img{
+    height: 200px;
+    width: auto;
+}
+.contenido_dos li{
+    display: inline-block;
+    margin: 20px 20px;
+}
+.contenido_dos p{
+    text-align: center;
+    line-height: 30px;
+}
+/* Contenido 3 */
+.contenido_tres .title_section{
+    text-align: right;
+}
+.contenido_tres{
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+}
+/* Contenido de artículos */
+/* El método a utilizar para la visualización puede variar con respecto
+a los flex-items y container-flex. */
+.contenido_cuatro{
+    font-family: $family-main-uno;
+    padding: 20px;
+    min-height: 700px;
+    width: $resolucion-main-ancho;
+    .comentario__title{
+        width: $resolucion-main-ancho;
+        font-size: 30px;
+        color: $bgcolor-main-uno;
+    }
+    .comentario_contenedor{
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: $separacion-main-display;
+        width: $resolucion-main-ancho;
+        min-height: 700px;
+    }
+    .comentario_uno{
+        width: $resolucion-main-ancho;
+        padding: 20px;
+        background-color: #D8EBF2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }    
+}
+.comentario_uno p{
+    text-align: justify;
+    font-size: 15px;
+}
+/* Pie de página */
+.footer{
+    padding: 20px;
+    font-family: "Poppins", sans-serif;
+    background-color: #D0D9D7;
+    color: #000;
+    height: 400px;
+}
+.footer .logo{
+    font-family: "Josefin Sans",sans-serif;
+}
+.footer ul{
+    text-align: right;
+    list-style-type: none;
+    
+}
+.footer p{
+    font-weight: bold;
+    text-align: center;
+}
+/* Page de productos ----------------------------------*/
+.content_llamativo{
+    /* background-image: url(../img/jewellery-1203951_1280.jpg); */
+    min-height: 800px;
+    color: #fff;
+    /* Modified tree */
+    // display: flex;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+    background-color: $bgcolor-main-uno;
+    padding: 20px;
+    //width: 100%
+
+    & h1{
+        font-size: 50px;
+    }
+    .llamativo__img{
+        /* background-image: url(../img/hygiene-870763_1280.jpg); */
+        background-color: #D0D9D7;
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    & ::selection{
+        color: $bgcolor-main-uno;
+        background-color: $color-word-uno;
+    }
+}
+.llamativo{
+    display: flex;
+    flex-flow: row nowrap;
+    padding: 20px;
+    width: $resolucion-main-ancho;
+    min-height: 800px;
+    gap: $separacion-main-display;
+    /* Css Nesting */
+    .one{
+        background-image: url(../img/jewellery-1203951_1280.jpg);
+    }
+    .two{
+        background-image: url(../img/ruby-2426451_640.jpg);
+    }
+    .tree{
+        background-image: url(../img/ring-jewelry-2834320_1280.jpg);
+    }
+    .four{
+        background-image: url(../img/glass-and-wood-ring-2636613_1280.jpg);
+    }
+}
+.llamativo__descripcion{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+    width: 100%;
+    align-items: center;
+
+    & a{
+        border-radius: 20px;
+        transition: 0.9s ease;
+        width: 10%;
+        background-color: $color-word-dos;
+        color: $bgcolor-main-uno;
+        text-decoration: none;
+        padding: 10px 20px;
+        border: 1px solid white;
+    }
+    & a:hover{
+        transition: 0.9s ease;
+        background-color: transparent;
+        border: 1px solid white;
+        color: $color-word-uno;
+    }
+}
+/* Aplicación de grid sección de tipos de servicios */
+/* Css Nesting */
+.tipo_servicio{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 600px);
+    /* padding: 0px 20px; */
+    gap: 4px 4px;
+    height: auto;
+    .servicio{
+        background-color: #F06060;
+        /* border: 2px solid #D8EBF2; */
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 20px 20px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 531px){
+    .tipo_servicio{
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(4, 500px);
+    }
+}
+.servicio h2{
+    font-family: "Sora", sans-serif;
+    color: white;
+    font-size:25px;
+}
+.img1{
+    background-image: url(../img/hygiene-870763_1280.jpg);
+}
+.img2{
+    background-image: url(../img/glass-and-wood-ring-2636613_1280.jpg);
+}
+.img3{
+    background-image: url(../img/wedding-ring-2666265_1280.jpg);
+}
+.img4{
+    background-image: url(../img/ruby-2426451_640.jpg);
+}
+.img4 a{
+    font-size: 16px;
+}
+/* REFACTORIZAR CÓDIGO (LÍNEAS REPETITIVAS INNECESARIAS) */
+/* .mensaje_uno{
+    text-align: center;
+    padding: 20px;
+} */
+.contenido_puno{
+    background-color: #D8EBF2;
+    height: 400px;
+}
+@media only screen and (max-width: 450px){
+    .contenido_uno{
+        flex-wrap: wrap;
+        .descripcion a{
+            width: 50%;
+        }
+    }
+    .content_llamativo{
+        margin: 0;
+        border-radius: 0px;
+        & a{
+            width: 50%;
+        }
+    }
+    .contenido_video{
+        min-height: 50px;
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 880px){
+    .descripcion__img{
+        gap: 10px;
+    }
+    .descripcion--one{
+        grid-row: 1/2;
+        grid-column: 1/3;
+    }
+    .descripcion--two{
+        grid-row: 2/2;
+        grid-column: 1/3;
+    }
+}
+.contenido_video{
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    & video{
+        border-radius: 3px;
+        width: 100%;
+        height: auto;
+    }
+}
+/* Section products featured */
+.producto_destacado{
+    min-height: 500px;
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--Tipografia_section);
+    padding: 30px 20px;
+    gap: 10px;
+    /* Css Nesting Native */
+    .producto{
+        /* OJO con la altura*/
+        height: 500px;
+        background-color: white;
+        /* Ojo con el width */
+        /* width: 50%; */
+        border-radius: 3px;
+        transition: .5s ease;
+        width: 100%;
+    }
+    .producto__descripcion{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-around;
+        align-items: center;
+        height: 50%;
+        // gap: 20px;
+        padding: 10px;
+    }
+    .producto__img{
+        background-color: #D8EBF2;
+        background-image: url(../img/ring-jewelry-2834320_1280.jpg);
+        height: 250px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    .producto__img--two{
+        background-image: url(../img/necklace-with-winged-heart-2900727_1280.jpg);
+    }
+    .producto__img--tree{
+        background-image: url(../img/earrings-8310858_1280.jpg);
+    }
+    .producto__img--four{
+        background-image: url(../img/ring-4279990_1280.jpg);
+    }
+    .producto__valoracion{
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+.producto__descripcion h2{
+    text-align: center;
+}
+.producto:hover{
+    transition: .5s ease;
+    transform: scale(0.9);
+}
+.title_featured{
+    font-size: 30px;
+    font-family: $family-main-uno;
+    color: #1D2326;
+    text-align: center;
+    text-decoration: underline;
+}
+@media only screen and (max-width: 700px){
+    .producto_destacado{
+        /* display: flex; */
+        flex-flow: column;
+        width: 100%;
+        overflow: hidden;
+    }
+}
