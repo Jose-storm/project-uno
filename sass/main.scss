@@ -276,28 +276,34 @@ a los flex-items y container-flex. */
 .contenido_cuatro{
     font-family: $family-main-uno;
     padding: 20px;
-    min-height: 700px;
+    min-height: 400px;
     width: $resolucion-main-ancho;
+    background-color: $bgcolor-main-uno;
     .comentario__title{
         width: $resolucion-main-ancho;
         font-size: 30px;
-        color: $bgcolor-main-uno;
+        color: $color-word-uno;
     }
     .comentario_contenedor{
         display: flex;
         flex-flow: row nowrap;
-        align-items: center;
+        /* Un pequeño detalle */
+        // align-items: center;
         gap: $separacion-main-display;
         width: $resolucion-main-ancho;
-        min-height: 700px;
+        min-height: 400px;
+        padding: 50px 0px;
     }
     .comentario_uno{
         width: $resolucion-main-ancho;
-        padding: 20px;
-        background-color: #D8EBF2;
+        padding: 20px;  
+        background-color: $color-word-dos;
+        color: $bgcolor-main-uno;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        /* Se ajusta al contenido */
+        // min-height: 300px;
     }    
 }
 .comentario_uno p{
@@ -403,28 +409,55 @@ a los flex-items y container-flex. */
 /* Aplicación de grid sección de tipos de servicios */
 /* Css Nesting */
 .tipo_servicio{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 600px);
-    /* padding: 0px 20px; */
-    gap: 4px 4px;
-    height: auto;
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(2, 600px);
+    // /* padding: 0px 20px; */
+    // gap: calc($separacion-main-display/2);
+    // padding: 40px 0px;
+    // height: auto;
+    padding: 50px;
     .servicio{
         background-color: #F06060;
         /* border: 2px solid #D8EBF2; */
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        padding: 20px 20px;
         width: 100%;
     }
-}
-@media only screen and (max-width: 531px){
-    .tipo_servicio{
-        grid-template-columns: repeat(1, 1fr);
-        grid-template-rows: repeat(4, 500px);
+    .services__vacio{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(1, 900px);
+        /* padding: 0px 20px; */
+        padding: 40px 0px;
+    }
+    @media only screen and (max-width: 531px){
+        .services__vacio{
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(1, 600px);
+        }
+        .img1{
+            grid-column: 1/3;
+            grid: 1/2;
+        }
+        .tipo_servicio{
+            padding: 0px 0px;
+        }
     }
 }
+// @media only screen and (max-width: 531px){
+//     .services__vacio{
+//         grid-template-columns: repeat(1, 1fr);
+//         grid-template-rows: repeat(1, 300px);
+//     }
+//     .img2{
+//         grid-column: ;
+//     }
+//     .tipo_servicio{
+//         padding: 0px 20px;
+//     }
+// }
 .servicio h2{
     font-family: "Sora", sans-serif;
     color: white;
